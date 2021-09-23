@@ -12,17 +12,14 @@ import java.util.List;
 public class MathUtils {
 
     /**
+     * This method adds all the given numbers to a total.
+     * If the input list is empty, 0 will be returned.
+     * If the input list is null, a NullPointerException will be thrown.
      *
-     * @param numbers
-     * @return
+     * @param numbers The list of numbers to add together
+     * @return The sum of all the given numbers
      */
     public double addition(List<Double> numbers) {
-        // kjsefkjsdbdskdjdb
-
-        /*
-        dfbgdfb
-        dfbdfbfd
-         */
         double sum = 0;
 
         for (Double number : numbers) {
