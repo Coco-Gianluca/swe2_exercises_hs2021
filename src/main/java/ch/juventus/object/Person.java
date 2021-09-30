@@ -2,7 +2,7 @@ package ch.juventus.object;
 
 import java.util.Objects;
 
-public class Person {
+public class Person implements Comparable<Person> {
 
     private String firstName;
     private String lastName;
@@ -10,7 +10,13 @@ public class Person {
     private int age;
     private boolean hasPet;
 
+    public Person(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
 
+    public Person() {
+    }
 
     public String getFirstName() {
         return firstName;
@@ -74,5 +80,10 @@ public class Person {
     @Override
     public int hashCode() {
         return Objects.hash(firstName, lastName, address, age, hasPet);
+    }
+
+    @Override
+    public int compareTo(Person o) {
+        return firstName.compareTo(o.firstName);
     }
 }

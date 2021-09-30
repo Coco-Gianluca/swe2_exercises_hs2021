@@ -1,5 +1,9 @@
 package ch.juventus.collections;
 
+import ch.juventus.object.Person;
+
+import java.util.*;
+
 public class CollectionsExercise {
 
     public static void main(String[] args) {
@@ -14,77 +18,185 @@ public class CollectionsExercise {
     }
 
     static void arrayList() {
-        // TODO: Erstelle eine ArrayList von Strings und füge 5 Tiere hinzu ("Hund", "Katze", "Maus", ...)
-        // TODO: Gib die Anzahl Einträge auf der Konsole aus.
-        // TODO: Füge ein weiteres Element mit Index 2 hinzu.
-        // TODO: Gib die ganze Liste auf der Konsole aus.
-        // TODO: Prüfe ob ein bestimmtes Element in der Liste vorkommt.
-        // TODO: Ein Element lesen via Index.
-        // TODO: Ein Element löschen via Index
-        // TODO: Ein Element löschen via String
-        // TODO: Ein Element löschen via Index, das es nicht gibt (was passiert?)
-        // TODO: Ein Element löschen via String, das es nicht gibt (was passiert?)
-        // TODO: Alle Elemente aus der Liste löschen
+        List<String> animals = new ArrayList<>();
+        animals.add("Hund");
+        animals.add("Katze");
+        animals.add("Leguan");
+        animals.add("Leguan");
+        animals.add("Leguan");
+        animals.add("Leguan");
+        animals.add("Pinguin");
+        animals.add("Chamelion");
+
+        System.out.println(animals.size());
+
+        animals.add(2, "Baumvaran");
+
+        System.out.println(animals);
+
+        animals.contains("Löwe");
+        animals.contains("Katze");
+
+        System.out.println(animals.contains("Löwe"));
+        System.out.println(animals.contains("Katze"));
+
+        animals.get(4);
+
+        System.out.println(animals.get(4));
+
+        animals.remove(5);
+
+        animals.remove("Leguan");
+
+
+        System.out.println(animals);
+
+        // animals.remove(73);
+        animals.remove("Löwe");
+
+        animals.clear();
+
+        System.out.println(animals);
+
+
+
+        List<String> immutableList = List.of("A", "B", "c");
+
+        String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+        List<String> otherList = Arrays.asList(cars);
+
+
     }
 
     static void linkedList() {
-        // TODO: Erstelle eine LinkedList von Strings und füge 5 Tiere hinzu ("Hund", "Katze", "Maus", ...)
-        // TODO: Gib die Anzahl Einträge auf der Konsole aus.
-        // TODO: Den Index eines bestimmten Elements finden
-        // TODO: Den Index eines Elements das nicht existiert finden (was passiert?)
-        // TODO: Ein Element via Index lesen
-        // TODO: Das erste und letzte Element der Liste ausgeben
-        // TODO: Das erste und letzte Element der Liste löschen
+
+        LinkedList<String> animals = new LinkedList<>();
+        animals.add("Hund");
+        animals.add("Katze");
+        animals.add("Schwein");
+        animals.add("Jaguar");
+        animals.add("Affe");
+        animals.add("Leguan");
+        animals.add("Pinguin");
+        animals.add("Chamelion");
+
+        System.out.println(animals.size());
+        System.out.println(animals.indexOf("Affe"));
+        System.out.println(animals.indexOf("Zebra"));
+        System.out.println(animals.get(2));
+        System.out.println(animals.getFirst() + ", " + animals.getLast());
+        animals.removeLast();
+        System.out.println(animals);
     }
 
     static void hashSet() {
-        // TODO: Erstelle ein HashSet von Personen (object package)
-        // TODO: Füge mehrere Personen ein, auch doppelte (verschiedene Objekte mit gleichen Werten)
-        // TODO: Prüfe, ob das Set nicht leer ist
-        // TODO: Gib die Länge des Sets aus (doppelte Personen?)
-        // TODO: Prüfe, ob ein gewisses Element im Set existiert
-        // TODO: Lösche ein bestimmtes Element aus dem Set
-        // TODO: Gib das gesamte Set mehrmals auf der Konsole aus. Wie ist die Reihenfolge der Elemente?
+        Set<Person> students = new HashSet<>();
+        students.add(new Person("lastName", "firstName"));
+        students.add(new Person("lastName", "firstName"));
+        students.add(new Person("Linus", "Gobita"));
+        students.add(new Person("Rexhep", "Rexhepi"));
+        students.add(new Person("Sabine", "Codiga"));
+
+        students.isEmpty();
+        System.out.println(students.isEmpty());
+
+        students.size();
+        System.out.println(students.size());
+
+        Person o = new Person("lastName", "firstName");
+        students.contains(o);
+        System.out.println(students.contains(o));
+
+        students.remove(new Person("Sabine", "Codiga"));
+
+        System.out.println(students);
+        System.out.println(students);
+        System.out.println(students);
+        System.out.println(students);
+        System.out.println(students);
+        System.out.println(students);
+
+        Set.of(new Person("ff", "df"), new Person("fg", "hh"));
     }
 
     static void linkedHashSet() {
-        // TODO: Erstelle ein LinkedHashSet von Personen (object package)
-        // TODO: Füge mehrere Personen ein, auch doppelte (verschiedene Objekte mit gleichen Werten)
-        // TODO: Prüfe, ob das Set nicht leer ist
-        // TODO: Gib die Länge des Sets aus (doppelte Personen?)
-        // TODO: Gib das gesamte Set mehrmals auf der Konsole aus. Wie ist die Reihenfolge der Elemente?
+
+        Set<Person> students = new LinkedHashSet<>();
+        students.add(new Person("lastName", "firstName"));
+        students.add(new Person("lastName", "firstName"));
+        students.add(new Person("Linus", "Gobita"));
+        students.add(new Person("Rexhep", "Rexhepi"));
+        students.add(new Person("Sabine", "Codiga"));
+
+        System.out.println(students.isEmpty());
+        System.out.println(students.size());
+        System.out.println(students);
+        System.out.println(students);
+        System.out.println(students);
+        System.out.println(students);
+
     }
 
     static void treeSet() {
-        // TODO: Erstelle ein TreeSet von Personen (object package) und verwende den PersonComperator
-        // TODO: Füge mehrere Personen ein, auch doppelte (verschiedene Objekte mit gleichen Werten)
-        // TODO: Gib die Länge des Sets aus (doppelte Personen?)
-        // TODO: Gib das gesamte Set auf der Konsole aus. Wie ist die Reihenfolge der Elemente?
+        Set<Person> students = new TreeSet<>();
+        students.add(new Person("LastName", "firstName"));
+        students.add(new Person("LastName", "firstName"));
+        students.add(new Person("Linus", "Gobita"));
+        students.add(new Person("Rexhep", "Rexhepi"));
+        students.add(new Person("Sabine", "Codiga"));
+
+        System.out.println(students.size());
+        System.out.println(students);
+
     }
 
     static void hashMap() {
-        // TODO: Erstelle eine HashMap (Key: String; Value: List<Person>)
-        // TODO: Füge folgende Einträge in die Map:
-        //  ­ "family" : Liste von 3 Personen
-        //  ­ "office" : null
-        //  ­ "friends" : Liste von 3 Personen
-        // TODO: Gib die gesamte Map auf der Konsole aus
-        // TODO: Füge einen weiteren Eintrag "office" : Liste von 2 Personen der Map hinzu.
-        //  (Wieviele Einträge sind jetzt in der Map?)
-        // TODO: Gib das entrySet auf der Konsole aus
-        // TODO: Gib das keySet auf der Konsole aus
-        // TODO: Gib die values auf der Konsole aus
+        Map<String, List<Person>> students = new HashMap<>();
+
+        students.put("family", List.of(new Person("Linus", "Gobita"), new Person("Mike", "Caflisch"), new Person("Marco", "Kunz")));
+        students.put("office", null);
+        students.put("friends", List.of(new Person("Linus", "Gobita"), new Person("Mike", "Caflisch"), new Person("Marco", "Kunz")));
+
+        System.out.println(students);
+
+        students.put("office", List.of(new Person("Sabine", "Codiga")));
+
+        System.out.println(students.entrySet());
+        System.out.println(students.keySet());
+        System.out.println(students.values());
+
+
+        Map.of("family", List.of(), "office", List.of());
     }
 
     static void linkedHashMap() {
-        // TODO: Erstelle eine LinkedHashMap (Key: Integer; Value: Person) mit Access-Order
-        // TODO: Fülle 5 Einträge ein (auch doppelte Keys, um zu überprüfen, dass der Value überschrieben wird)
-        // TODO: Gib die gesamte Map auf der Konsole aus
-        // TODO: Greife auf mehrere Elemente zu
-        // TODO: Gib die Map erneut aus und überprüfe die Sortierung
+        Map<Integer, Person> studets = new LinkedHashMap<>(16, .75f, true);
+        studets.put(44, new Person("Gianluca", "Coco"));
+        studets.put(76, new Person("Mike", "Mono"));
+        studets.put(188, new Person("Fabian", "Alto"));
+        studets.put(404, new Person("Alberto", "Sono"));
+        studets.put(79, new Person("Jose", "Pogba"));
+
+        System.out.println(studets);
+
+        studets.get(79);
+        
+        studets.get(188);
+        System.out.println(studets);
+
+      
     }
 
     static void treeMap() {
+        
+        Map<Integer, Person> treeMapTest = new TreeMap<>();
+        treeMapTest.put(76, new Person("Mike", "Mono"));
+        treeMapTest.put(44, new Person("Gianluca", "Coco"));
+        treeMapTest.put(188, new Person("Fabian", "Alto"));
+        treeMapTest.put(404, new Person("Alberto", "Sono"));
+        treeMapTest.put(79, new Person("Jose", "Pogba"));
+
+        System.out.println(treeMapTest);
         // TODO: Erstelle eine TreeMap (Key: Integer; Value: Person)
         // TODO: Fülle 5 Einträge ein (auch doppelte Keys, um zu überprüfen, dass der Value überschrieben wird)
         // TODO: Gib die gesamte Map auf der Konsole aus und überprüfe die Sortierung
