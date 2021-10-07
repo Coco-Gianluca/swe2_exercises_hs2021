@@ -28,6 +28,10 @@ public class CollectionsExercise {
         animals.add("Pinguin");
         animals.add("Chamelion");
 
+        for (String animal : animals) {
+            System.out.println(animal);
+        }
+
         System.out.println(animals.size());
 
         animals.add(2, "Baumvaran");
@@ -100,6 +104,10 @@ public class CollectionsExercise {
         students.isEmpty();
         System.out.println(students.isEmpty());
 
+        for (Person student : students) {
+            System.out.println(student);
+        }
+
         students.size();
         System.out.println(students.size());
 
@@ -164,6 +172,11 @@ public class CollectionsExercise {
         System.out.println(students.entrySet());
         System.out.println(students.keySet());
         System.out.println(students.values());
+
+        for (Map.Entry<String, List<Person>> entry : students.entrySet()) {
+            System.out.println(entry.getKey());
+            System.out.println(entry.getValue());
+        }
 
 
         Map.of("family", List.of(), "office", List.of());
