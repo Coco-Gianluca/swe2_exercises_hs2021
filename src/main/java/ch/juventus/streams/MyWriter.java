@@ -1,9 +1,6 @@
 package ch.juventus.streams;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Writer;
+import java.io.*;
 
 public class MyWriter {
 
@@ -18,6 +15,15 @@ public class MyWriter {
         writer.write(outputText.toString());
 
         writer.close();
+    }
+
+    public void writeAtPosition(String filePath, int position) throws IOException {
+        RandomAccessFile file = new RandomAccessFile(filePath, "rw");
+
+        file.seek(position);
+        file.write("-huhu-".getBytes());
+
+        file.close();
     }
 
 }

@@ -1,9 +1,6 @@
 package ch.juventus.streams;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.Reader;
+import java.io.*;
 
 public class MyReader {
 
@@ -18,6 +15,21 @@ public class MyReader {
         }
 
         reader.close();
+    }
+
+    public void readAtPosition(String filePath, int position) throws IOException {
+        RandomAccessFile file = new RandomAccessFile(filePath, "r");
+
+        file.seek(position);
+
+        int data = file.read();
+        while(data != -1){
+            char dataChar = (char) data;
+            System.out.print(dataChar);
+            data = file.read();
+        }
+
+        file.close();
     }
 
 }
